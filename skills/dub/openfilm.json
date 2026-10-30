@@ -1,0 +1,29 @@
+{
+  "version": "0.1.0",
+  "repository": "https://github.com/WEBGRS/openfilm-dub/tree/main/skills/dub",
+  "kind": "workflow",
+  "order": 23,
+  "icon": "copy",
+  "cover": "cover.jpg",
+  "title": {
+    "en": "Another language",
+    "zh-CN": "换语种配音",
+    "ja": "別の言語で",
+    "ko": "다른 언어로",
+    "es": "En otro idioma"
+  },
+  "summary": {
+    "en": "Your voiced film in another language: voice-over said again, text and subtitles translated, every picture still on its word.",
+    "zh-CN": "把配好音的片子做成另一种语言：重新配音，画面文字和字幕一起换，每个画面仍然踩在它的词上。",
+    "ja": "ナレーション付きの動画を別の言語に。声を録り直し、画面の文字と字幕も翻訳し、どの映像も元の言葉に合わせたまま。",
+    "ko": "내레이션이 있는 영상을 다른 언어로. 다시 녹음하고, 화면 글자와 자막도 번역하며, 모든 장면이 제 단어에 맞춰집니다.",
+    "es": "Tu película con voz en otro idioma: la locución dicha de nuevo, textos y subtítulos traducidos, cada imagen aún sobre su palabra."
+  },
+  "details": {
+    "en": "Best for: explainers, demos and promos you want on another market or platform.\nWhat it does: translates each line for the ear of the new language, voices it with a voice like yours, translates the text in the pictures, and retimes the pictures so each still lands on its word, in a copy of the project. It reports how far the furthest picture is from its word and which lines changed in meaning.",
+    "zh-CN": "适合：想发到别的市场或平台的讲解片、演示片和宣传片。\n它会：按新语言的说话习惯翻译每一句，用和原片相近的声音重新配音，把画面里的文字也翻译过去，再调整画面时间让每个画面仍然踩在它的词上；全在项目的副本里做。交付时报出离词最远的画面差多少，以及哪些句子的意思改了。",
+    "ja": "こんなときに：別の市場やプラットフォームに出したい解説、デモ、プロモーション動画。\nすること：新しい言語で聞いて自然なように各行を訳し、元に近い声で読み上げ、画面の文字も訳し、映像のタイミングを調整してどの映像も元の言葉に合わせます。すべてプロジェクトのコピーで行います。言葉から最も離れた映像のずれと、意味が変わった行を報告します。",
+    "ko": "이럴 때: 다른 시장이나 플랫폼에 올리고 싶은 설명 영상, 데모, 홍보 영상.\n하는 일: 새 언어로 들었을 때 자연스럽게 각 줄을 번역하고, 원래와 비슷한 목소리로 다시 녹음하며, 화면 글자도 번역하고, 장면 타이밍을 조정해 모든 장면이 제 단어에 맞도록 합니다. 모두 프로젝트 사본에서 합니다. 단어에서 가장 먼 장면의 차이와 의미가 바뀐 줄을 알려 줍니다.",
+    "es": "Ideal para: explicativos, demos y promociones que quieres llevar a otro mercado o plataforma.\nQué hace: traduce cada frase para que suene natural en el nuevo idioma, la graba con una voz parecida a la tuya, traduce los textos de las imágenes y reajusta los tiempos para que cada imagen siga cayendo en su palabra, todo en una copia del proyecto. Informa de la imagen más alejada de su palabra y de las frases que cambiaron de sentido."
+  }
+}

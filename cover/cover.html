@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  /* 1600x900 cover: one voice track, the same film's pictures, the voice said again in another language, each picture on its word */
+  * { box-sizing: border-box; margin: 0; }
+  html, body { width: 1600px; height: 900px; }
+  body {
+    background: #f4f1ea;
+    font-family: "Segoe UI", "Microsoft YaHei UI", sans-serif;
+    color: #1d1b18;
+    position: relative; overflow: hidden;
+  }
+  .lang { position: absolute; left: 104px; width: 88px; height: 88px; border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: 40px; font-weight: 800; }
+  .lang.a { top: 150px; background: #1d1b18; color: #f4f1ea; }
+  .lang.b { top: 662px; background: #e0572d; color: #fff; }
+  .track { position: absolute; left: 216px; right: 104px; height: 88px; border: 3px solid #1d1b18; border-radius: 18px; background: #fff; }
+  .track.a { top: 150px; }
+  .track.b { top: 662px; border-color: #e0572d; }
+  .track i { position: absolute; top: 50%; width: 6px; border-radius: 3px; transform: translateY(-50%); }
+  .track.a i { background: #1d1b18; }
+  .track.b i { background: #e0572d; }
+  .pics { position: absolute; left: 216px; right: 104px; top: 300px; height: 300px; }
+  .pic { position: absolute; top: 0; height: 300px; border: 3px solid #1d1b18; border-radius: 22px; background: #fff; overflow: hidden; }
+  .pic .shape { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); background: #d9d3c6; }
+  .link { position: absolute; width: 0; border-left: 3px dashed #b9b1a1; }
+  .dot { position: absolute; width: 18px; height: 18px; border-radius: 50%; background: #e0572d; transform: translate(-50%, -50%); }
+</style>
+</head>
+<body>
+  <div class="lang a">中</div>
+  <div class="lang b">EN</div>
+  <div class="track a" id="ta"></div>
+  <div class="pics" id="pics"></div>
+  <div class="track b" id="tb"></div>
+  <script>
+    // Three pictures; each starts on a word, shorter in the first voice, longer in the second
+    const W = 1280;
+    const a = [0, 330, 700, 1000];
+    const b = [0, 400, 860, 1280];
+    const shapes = [['50%', '50%', '120px', '120px'], ['8px', '8px', '220px', '90px'], ['50%', '0', '180px', '180px']];
+    let seed = 3;
+    const rnd = () => (seed = (seed * 9301 + 49297) % 233280) / 233280;
+    const bars = (el, from, to) => {
+      for (let x = from + 18; x < to - 12; x += 15) {
+        const i = document.createElement('i');
+        i.style.left = x + 'px';
+        i.style.height = (14 + rnd() * 54) + 'px';
+        el.appendChild(i);
+      }
+    };
+    for (let k = 0; k < 3; k++) {
+      bars(document.getElementById('ta'), a[k], a[k + 1] - 16);
+      bars(document.getElementById('tb'), b[k], b[k + 1] - 16);
+      const p = document.createElement('div');
+      p.className = 'pic';
+      p.style.left = b[k] + 'px';
+      p.style.width = (b[k + 1] - b[k] - 18) + 'px';
+      const s = document.createElement('div');
+      s.className = 'shape';
+      const [r, , w, h] = shapes[k];
+      s.style.borderRadius = r;
+      s.style.width = w;
+      s.style.height = h;
+      p.appendChild(s);
+      document.getElementById('pics').appendChild(p);
+      // Where the picture starts: on its word in both voices
+      const x0 = 216 + a[k] + 3, x1 = 216 + b[k] + 3;
+      for (const [x, y] of [[x0, 194], [x1, 706]]) {
+        const d = document.createElement('div');
+        d.className = 'dot';
+        d.style.left = x + 'px';
+        d.style.top = y + 'px';
+        document.body.appendChild(d);
+      }
+      const l = document.createElement('div');
+      l.className = 'link';
+      l.style.left = x1 + 'px';
+      l.style.top = '600px';
+      l.style.height = '62px';
+      document.body.appendChild(l);
+      // From the word in the first voice to where the picture now starts
+      const ns = 'http://www.w3.org/2000/svg';
+      const svg = document.createElementNS(ns, 'svg');
+      svg.setAttribute('width', '1600');
+      svg.setAttribute('height', '900');
+      svg.style.cssText = 'position:absolute;left:0;top:0;pointer-events:none';
+      const line = document.createElementNS(ns, 'line');
+      for (const [k2, v] of [['x1', x0], ['y1', 238], ['x2', x1], ['y2', 300], ['stroke', '#b9b1a1'], ['stroke-width', 3], ['stroke-dasharray', '6 6']]) line.setAttribute(k2, v);
+      svg.appendChild(line);
+      document.body.appendChild(svg);
+    }
+  </script>
+</body>
+</html>
