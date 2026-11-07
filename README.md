@@ -16,12 +16,13 @@ What the brief asks of the agent:
 
 - each line keeps its meaning, facts, numbers and names; lines changed to work in the new language (a pun, a local
   example) are named, with why;
-- lines written to the length a native script would have, in a voice like the original's; where a line needs more
-  time the pictures make room, and the voice is never sped up;
+- lines written to the length a native script would have; where a line needs more time the pictures make room, and
+  the voice is never sped up;
+- a voice of the original speaker's gender and age where the service has one, and a plain statement where it has not;
 - every picture tied to a word lands on it in the new voice within two frames, measured from the new voice-over's word
   times, and the furthest one is reported;
-- text in pages and titles translated and checked in the frames for fit; text inside footage that cannot change is
-  listed;
+- text in pages and titles translated and checked in the frames for fit; caption tracks written again from the new
+  voice with their look kept; text inside footage that cannot change is listed;
 - the new language in a copy of the project, the original untouched;
 - before voicing every line on a paid service, the agent says how many lines and characters it will be.
 
@@ -30,13 +31,14 @@ What the brief asks of the agent:
 - **In OpenFilm**: open Skills, add one from a link, and paste `https://github.com/WEBGRS/openfilm-dub`.
 - **In your own agent** (Claude Code, Codex and others): `npx skills add WEBGRS/openfilm-dub`.
 
-It needs a voice-over service connected in OpenFilm (Settings → Providers), with voices in the new language. A brief
-only: no scripts, nothing installed.
+It needs a voice-over service connected in OpenFilm (Settings → Services), with voices in the new language. A brief
+and one script, `scripts/dub.mjs`, that the agent runs (`voice`, `captions`, `check`); nothing is installed.
 
 ## Check
 
 ```sh
 node scripts/check.mjs
+npm test
 ```
 
 [evals/README.md](evals/README.md) has the requests it was tried on, with and without it, and what came of each.
@@ -47,6 +49,6 @@ OpenFilm 技能：把配好音的片子做成另一种语言。旁白按新语�
 
 Studio 本来就能翻译字幕，但原声还在下面；而且新语言念到某个数字或关键词的时刻变了，原来踩在词上的画面就全错位了。这个技能是给「要让观众听到新语言」的情况用的。
 
-需求书对智能体的要求：每句话的意思、事实、数字和名字不变，为了适合新语言改过的句子（双关、本地化的例子）要列出来并说明原因；句子按母语脚本的长度来写，用和原片相近的声音，需要更长的时间就让画面让位，不加速配音；每个踩词的画面在新配音里误差两帧以内，按新配音的逐词时间量，报出差得最多的一个；页面和标题里的文字翻译后逐帧检查是否放得下，素材里改不了的文字列出来；新语言做在项目副本里，原片不动；用付费服务配音前，先报要配几句、多少字。
+需求书对智能体的要求：每句话的意思、事实、数字和名字不变，为了适合新语言改过的句子（双关、本地化的例子）要列出来并说明原因；句子按母语脚本的长度来写，用和原片同性别、相近年龄的声音（服务里没有就如实说），需要更长的时间就让画面让位，不加速配音；每个踩词的画面在新配音里误差两帧以内，按新配音的逐词时间量，报出差得最多的一个；页面和标题里的文字翻译后逐帧检查是否放得下，字幕轨按新配音重写并保留样式，素材里改不了的文字列出来；新语言做在项目副本里，原片不动；用付费服务配音前，先报要配几句、多少字。
 
-**安装**：在 OpenFilm 的技能页点「添加 skill」，粘贴链接 `https://github.com/WEBGRS/openfilm-dub`；用自己的智能体就运行 `npx skills add WEBGRS/openfilm-dub`。需要先在 OpenFilm 的设置（左上角的 OpenFilm 标志）→ 服务商里连好一个配音服务，并且有新语言的音色。只有一份需求书，没有脚本。
+**安装**：在 OpenFilm 的技能页点「添加 skill」，粘贴链接 `https://github.com/WEBGRS/openfilm-dub`；用自己的智能体就运行 `npx skills add WEBGRS/openfilm-dub`。需要先在 OpenFilm 的设置（左上角的 OpenFilm 标志）→ 服务里连好一个配音服务，并且有新语言的音色。一份需求书，加一个智能体运行的检查脚本（`scripts/dub.mjs`）。

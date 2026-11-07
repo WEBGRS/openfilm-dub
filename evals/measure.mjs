@@ -5,6 +5,7 @@
 // --vtts: read each voice clip's .vtt from this folder
 // --self: the original film, its cues found by the original's words
 // --control: the original film against the word times stored in the cue sheet
+// --caption-band <0-1>: ignore changes in the frame below this fraction of its height, where a caption track draws (changes of a caption are not a page's moments)
 import { spawn } from 'node:child_process';
 import { createHash } from 'node:crypto';
 import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';
@@ -12,6 +13,7 @@ import { basename, dirname, join, relative } from 'node:path';
 
 const arg = (k) => { const i = process.argv.indexOf(`--${k}`); return i < 0 ? undefined : process.argv[i + 1]; };
 const [project, cuesFile] = process.argv.slice(2);
+const band = Number(arg('caption-band') ?? 1);
 const mp4 = arg('mp4'), to = arg('to'), sourceDir = arg('source'), mapFile = arg('map'), wordsFile = arg('words'), vttDir = arg('vtts');
 const self = process.argv.includes('--self');
 const FPS = 30, W = 480, H = 270;
@@ -90,9 +92,10 @@ const frameScan = () => new Promise((resolve, reject) => {
     while (held.length >= size) {
       const f = held.subarray(0, size);
       let moved = 0, sum = 0;
+      const seen = Math.floor(H * band) * W;
       for (let i = 0; i < size; i++) {
         sum += f[i];
-        if (prev && Math.abs(f[i] - prev[i]) > 8) moved++;
+        if (i < seen && prev && Math.abs(f[i] - prev[i]) > 8) moved++;
       }
       change.push(moved / size);
       dark.push(sum / size < 4);
@@ -216,6 +219,20 @@ const vttCheck = voices.map((v) => {
 const vttTally = {};
 for (const r of vttCheck) vttTally[r] = (vttTally[r] ?? 0) + 1;
 
+// Caption tracks: the script of their words, and how many cues start on a word of the voice
+const captions = [...film.matchAll(/<track\b[^>]*>/g)].map((m) => attr(m[0], 'src')).filter(Boolean).map((src) => {
+  const p = join(project, decodeURI(src));
+  if (!existsSync(p)) return { src, status: 'file missing' };
+  const raw = readFileSync(p, 'utf8');
+  const cuesIn = [...raw.matchAll(/(\d[\d:.]*\d) --> /g)].map((m) => stamp(m[1]));
+  const text = raw.replace(/^.*-->.*$/gm, ' ').replace(/^(WEBVTT|NOTE|REGION|STYLE|[a-z-]+:.*|::cue.*)$/gm, ' ').replace(/<[^>]*>/g, '');
+  const cjk = (text.match(/[㐀-鿿]/g) ?? []).length, latin = (text.match(/[A-Za-z]{2,}/g) ?? []).length;
+  return {
+    src, cues: cuesIn.length, language: cjk > latin ? 'zh' : latin ? 'en' : '?', in_target_language: (cjk > latin ? 'zh' : 'en') === to,
+    on_a_word: cuesIn.filter((t) => words.some((k) => Math.abs(k.t - t) <= 2 / FPS)).length,
+  };
+});
+
 const report = {
   project: basename(project),
   cues: sheet.cues.length,
@@ -232,6 +249,7 @@ const report = {
   render_seconds: scan ? +(scan.n / FPS).toFixed(2) : null,
   black_seconds: scan ? +(scan.dark.filter(Boolean).length / FPS).toFixed(2) : null,
   original_files_changed: changed,
+  captions,
   rows,
 };
 if (process.argv.includes('--json')) console.log(JSON.stringify(report, null, 1));
