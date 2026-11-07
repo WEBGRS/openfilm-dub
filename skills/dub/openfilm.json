@@ -1,10 +1,17 @@
 {
-  "version": "0.1.0",
+  "version": "0.1.2",
   "repository": "https://github.com/WEBGRS/openfilm-dub/tree/main/skills/dub",
   "kind": "workflow",
   "order": 23,
   "icon": "copy",
   "cover": "cover.jpg",
+  "needs": {
+    "en": "A voice-over service connected in OpenFilm, with voices in the new language",
+    "zh-CN": "在 OpenFilm 里连好一个配音服务，并且有新语言的音色",
+    "ja": "OpenFilm に接続した音声合成サービス（新しい言語の声があるもの）",
+    "ko": "OpenFilm에 연결된 음성 합성 서비스(새 언어 목소리 포함)",
+    "es": "Un servicio de locución conectado en OpenFilm, con voces en el nuevo idioma"
+  },
   "title": {
     "en": "Another language",
     "zh-CN": "换语种配音",

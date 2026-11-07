@@ -1,0 +1,156 @@
+{
+ "film": "molasses",
+ "source": [
+  "On January 15, 1919, a steel tank burst on the Boston waterfront.",
+  "It stood 50 feet tall and held 2.3 million gallons of molasses.",
+  "At about 12:30 in the afternoon it collapsed, and a wave 25 feet high ran through the North End.",
+  "The wave moved at an estimated 35 miles an hour.",
+  "It drove steel panels of the tank against the girders of the elevated railway.",
+  "21 people died, and about 150 were injured.",
+  "First to the scene were 116 cadets from a training ship docked nearby.",
+  "The next day, the Boston Post ran it across the front page.",
+  "119 residents sued the company that owned the tank.",
+  "After three years of hearings, it was found responsible and paid $628,000 in damages."
+ ],
+ "cues": [
+  {
+   "id": "card-date",
+   "kind": "clip",
+   "clip": "card-date.html",
+   "sourceAt": 0.541,
+   "target": "1919|一九一九",
+   "nth": 0,
+   "word": "january"
+  },
+  {
+   "id": "hit-height",
+   "kind": "hit",
+   "clip": "tank.html",
+   "hit": 1,
+   "sourceAt": 6.95,
+   "target": "50|五十|15米",
+   "nth": 0,
+   "word": "50"
+  },
+  {
+   "id": "hit-volume",
+   "kind": "hit",
+   "clip": "tank.html",
+   "hit": 2,
+   "sourceAt": 8.352,
+   "target": "230万|二百三十万|两百三十万|2\\.3",
+   "nth": 0,
+   "word": "2.3"
+  },
+  {
+   "id": "card-1230",
+   "kind": "clip",
+   "clip": "card-1230.html",
+   "sourceAt": 11.853,
+   "target": "12[:：点]|十二点",
+   "nth": 0,
+   "word": "12:"
+  },
+  {
+   "id": "photo-wave",
+   "kind": "clip",
+   "clip": "aftermath.jpg",
+   "sourceAt": 14.86,
+   "target": "巨浪|大浪|浪",
+   "nth": 0,
+   "word": "wave"
+  },
+  {
+   "id": "card-35",
+   "kind": "clip",
+   "clip": "card-35.html",
+   "sourceAt": 20.128,
+   "target": "35|三十五",
+   "nth": 0,
+   "word": "35"
+  },
+  {
+   "id": "photo-el",
+   "kind": "clip",
+   "clip": "elevated.jpg",
+   "sourceAt": 24.636,
+   "target": "高架",
+   "nth": 0,
+   "word": "elevated"
+  },
+  {
+   "id": "hit-dead",
+   "kind": "hit",
+   "clip": "counts.html",
+   "hit": 0,
+   "sourceAt": 26.192,
+   "target": "21|二十一",
+   "nth": 0,
+   "word": "21"
+  },
+  {
+   "id": "hit-hurt",
+   "kind": "hit",
+   "clip": "counts.html",
+   "hit": 1,
+   "sourceAt": 28.353,
+   "target": "150|一百五",
+   "nth": 0,
+   "word": "150"
+  },
+  {
+   "id": "card-116",
+   "kind": "clip",
+   "clip": "card-116.html",
+   "sourceAt": 31.68,
+   "target": "116|一百一十六",
+   "nth": 0,
+   "word": "116"
+  },
+  {
+   "id": "photo-post",
+   "kind": "clip",
+   "clip": "boston-post.jpg",
+   "sourceAt": 36.047,
+   "target": "波士顿邮报|邮报",
+   "nth": 0,
+   "word": "boston post"
+  },
+  {
+   "id": "card-119",
+   "kind": "clip",
+   "clip": "card-119.html",
+   "sourceAt": 38.918,
+   "target": "119|一百一十九",
+   "nth": 0,
+   "word": "119"
+  },
+  {
+   "id": "photo-map",
+   "kind": "clip",
+   "clip": "map.png",
+   "sourceAt": 38.918,
+   "target": "119|一百一十九",
+   "nth": 0,
+   "word": "119"
+  },
+  {
+   "id": "card-3",
+   "kind": "clip",
+   "clip": "card-3.html",
+   "sourceAt": 43.444,
+   "target": "三年|3年",
+   "nth": 0,
+   "word": "three"
+  },
+  {
+   "id": "card-628",
+   "kind": "clip",
+   "clip": "card-628.html",
+   "sourceAt": 47.349,
+   "target": "62\\.8万|628,?000|六十二万八|62万8",
+   "nth": 0,
+   "word": "628"
+  }
+ ]
+}

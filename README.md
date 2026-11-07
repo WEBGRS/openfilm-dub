@@ -39,6 +39,8 @@ only: no scripts, nothing installed.
 node scripts/check.mjs
 ```
 
+[evals/README.md](evals/README.md) has the requests it was tried on, with and without it, and what came of each.
+
 ## 中文说明
 
 OpenFilm 技能：把配好音的片子做成另一种语言。旁白按新语言的说话习惯重写、重新配音，画面里的文字一起翻译，再调整画面时间，让每个画面仍然踩在它原本对应的词上。新字幕由 Studio 按新配音生成。

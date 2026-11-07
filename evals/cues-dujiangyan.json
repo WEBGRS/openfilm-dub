@@ -1,0 +1,156 @@
+{
+ "film": "dujiangyan",
+ "source": [
+  "公元前256年，蜀郡太守李冰开始在岷江上修一座水利工程。",
+  "它叫都江堰。两千多年后的今天，它还在灌溉成都平原。",
+  "它有三个部分。第一个是鱼嘴，立在江心，把岷江分成内江和外江。",
+  "春天水少，六成水流进内江，保证春耕。",
+  "洪水来时，水漫过鱼嘴，六成水走外江，进内江的只有四成。",
+  "第二个是飞沙堰。内江水太多时，多余的水和泥沙从这里排进外江。",
+  "第三个是宝瓶口，一道从山崖上凿开的缺口，平均只有20.4米宽。",
+  "进了宝瓶口，水顺着渠道分流，灌溉一千多万亩农田。",
+  "2000年，都江堰被列入世界遗产。"
+ ],
+ "cues": [
+  {
+   "id": "card-256",
+   "kind": "clip",
+   "clip": "card-256.html",
+   "sourceAt": 0.3,
+   "target": "256|two hundred (and )?fifty[- ]six",
+   "nth": 0,
+   "word": "公元前|256"
+  },
+  {
+   "id": "photo-libing",
+   "kind": "clip",
+   "clip": "li-bing.jpg",
+   "sourceAt": 3.365,
+   "target": "li ?bing",
+   "nth": 0,
+   "word": "李冰"
+  },
+  {
+   "id": "photo-weir",
+   "kind": "clip",
+   "clip": "overview.jpg",
+   "sourceAt": 7.566,
+   "target": "dujiangyan",
+   "nth": 0,
+   "word": "都江堰"
+  },
+  {
+   "id": "photo-yuzui",
+   "kind": "clip",
+   "clip": "fish-mouth.jpg",
+   "sourceAt": 16.125,
+   "target": "fish ?mouth|yuzui",
+   "nth": 0,
+   "word": "鱼嘴"
+  },
+  {
+   "id": "hit-inner",
+   "kind": "hit",
+   "clip": "split.html",
+   "hit": 0,
+   "sourceAt": 19.212,
+   "target": "inner",
+   "nth": 0,
+   "word": "内江"
+  },
+  {
+   "id": "hit-outer",
+   "kind": "hit",
+   "clip": "split.html",
+   "hit": 1,
+   "sourceAt": 19.908,
+   "target": "outer",
+   "nth": 0,
+   "word": "外江"
+  },
+  {
+   "id": "hit-spring",
+   "kind": "hit",
+   "clip": "split.html",
+   "hit": 2,
+   "sourceAt": 22.204,
+   "target": "60|sixty|six[- ]tenths",
+   "nth": 0,
+   "word": "六成|6成"
+  },
+  {
+   "id": "hit-flood",
+   "kind": "hit",
+   "clip": "split.html",
+   "hit": 3,
+   "sourceAt": 28.581,
+   "target": "60|sixty|six[- ]tenths",
+   "nth": 1,
+   "word": "六成|6成"
+  },
+  {
+   "id": "hit-floodInner",
+   "kind": "hit",
+   "clip": "split.html",
+   "hit": 4,
+   "sourceAt": 31.705,
+   "target": "40|forty|four[- ]tenths",
+   "nth": 0,
+   "word": "四成|4成"
+  },
+  {
+   "id": "photo-feisha",
+   "kind": "clip",
+   "clip": "levee.jpg",
+   "sourceAt": 33.568,
+   "target": "flying ?sand|feisha",
+   "nth": 0,
+   "word": "飞沙堰"
+  },
+  {
+   "id": "photo-baoping",
+   "kind": "clip",
+   "clip": "bottle-neck.jpg",
+   "sourceAt": 40.959,
+   "target": "bottle|baoping",
+   "nth": 0,
+   "word": "宝瓶口"
+  },
+  {
+   "id": "card-20",
+   "kind": "clip",
+   "clip": "card-20.html",
+   "sourceAt": 45.76,
+   "target": "20\\.4|twenty point four",
+   "nth": 0,
+   "word": "20.4|二十点四"
+  },
+  {
+   "id": "card-1000",
+   "kind": "clip",
+   "clip": "card-1000.html",
+   "sourceAt": 51.079,
+   "target": "1.6 million|10 million|ten million|million mu|hectares|acres",
+   "nth": 0,
+   "word": "一千多万|1000多万|千多万"
+  },
+  {
+   "id": "card-2000",
+   "kind": "clip",
+   "clip": "card-2000.html",
+   "sourceAt": 53.118,
+   "target": "2000",
+   "nth": 0,
+   "word": "2000"
+  },
+  {
+   "id": "photo-gate",
+   "kind": "clip",
+   "clip": "gate.jpg",
+   "sourceAt": 53.118,
+   "target": "2000",
+   "nth": 0,
+   "word": "2000"
+  }
+ ]
+}
