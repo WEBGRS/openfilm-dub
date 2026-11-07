@@ -110,3 +110,9 @@ Version 0.1.1 sent the agent to `get voice` and `get tts`, which answer "not con
 one of their own, though `get` lists it under `get call`. Both agents with the skill then went past the working local
 service: one sent the script to an online voice, the other spliced a Windows voice phrase by phrase. Version 0.1.2 starts
 from `get`, and on the same requests both used the local service with word-timed `.vtt` files.
+
+## On OpenFilm 0.3.0
+
+After the trials, a copy of a finished trial project was run on the released OpenFilm 0.3.0 (Windows 11, 2026-11-06), without an agent and not in Studio.
+
+`look` passed. A 4 s `render` and `render --subtitles` both came out, and the second showed the subtitles.

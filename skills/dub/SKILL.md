@@ -32,7 +32,8 @@ before or after what they show.
 The original project: film.html, its pages, and each voice-over line with its `.vtt` word times beside it. The
 translation is yours. `npx openfilm get` says which voice services work, the person's own among them (`get call`). On a
 connected one, `get voice --language <code>` finds voices and `get tts` speaks a line and returns its word times, from
-which Studio makes the subtitles. A copy of the project's folder (Studio's "Save as new
+which Studio makes a caption track. One the copy already has may still hold the old language: check it, and make
+it again from the new voice. A copy of the project's folder (Studio's "Save as new
 project", or a copy opened with `npx openfilm open <folder>`) is the new language's project. Pictures are retimed by
 moving and trimming clips and by a page's own times; `look` checks them. Before voicing every line on a paid service,
 say how many lines and characters that is.

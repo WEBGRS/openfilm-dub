@@ -2,6 +2,9 @@
 
 ## 0.1.2
 
+OpenFilm 0.3.0 puts words on the picture as caption tracks: the brief says one already in the copy may still hold the
+old language.
+
 The brief no longer sends the agent only to `get voice` and `get tts`, which say "not connected" when the person's voice
 service is one of their own. In the first trials two agents with the skill went past a working service that way. It
 now starts from `get`, which lists the person's services and `get call`.
