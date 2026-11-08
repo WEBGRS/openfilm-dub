@@ -1,5 +1,10 @@
 # Changes
 
+## 0.2.1
+
+- `needs` names FFmpeg, which the script runs for audio that is not WAV (patch by riverisbuilding).
+- Evals: the owner watched and listened to both arms.
+
 ## 0.2.0
 
 A script, `scripts/dub.mjs`, with three commands the brief points to. The brief is 784 words.

@@ -1,6 +1,6 @@
 {
   "name": "openfilm-dub",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "private": true,
   "description": "An OpenFilm skill: the same film in another language, the voice said again and every picture still on its word.",
   "type": "module",

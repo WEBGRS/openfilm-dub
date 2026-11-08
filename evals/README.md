@@ -12,7 +12,7 @@ Skill version 0.2.0. Claude Code run headless, model `claude-sonnet-5-5` as each
 was the one difference between arms. Every agent with the skill read it (its Skill call is in the log) and ran
 `scripts/dub.mjs`: `voice` and `check` in requests 1 and 2, `voice`, `captions` and `check` in request 3.
 
-Results were read from contact sheets and frames, and no film was heard or watched in Studio. A native speaker has not
+Results were read from contact sheets and frames. The owner watched and listened to the films of both arms and accepted the skill (2026-11-08). A native speaker has not
 checked any translation.
 
 One run was repeated, as the rules allow after a defect showed: request 1 with the skill ran first on a `dub.mjs` that

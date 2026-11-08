@@ -1,5 +1,5 @@
 {
-  "version": "0.2.0",
+  "version": "0.2.1",
   "repository": "https://github.com/WEBGRS/openfilm-dub/tree/main/skills/dub",
   "kind": "workflow",
   "order": 23,
